@@ -1,5 +1,72 @@
 import 'package:flutter/material.dart';
 
+class BizCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("BizCards"),
+        centerTitle: true,
+        backgroundColor: Colors.lightBlueAccent,
+      ),
+      backgroundColor: Colors.redAccent,
+      body: Container(
+        alignment: Alignment.center,
+        child: Stack(
+          alignment: Alignment.topCenter,
+          children: <Widget>[_getCard(), _getAvatar()],
+        ),
+      ),
+    );
+  }
+
+  Container _getCard() {
+    return Container(
+      width: 400,
+      height: 200,
+      margin: EdgeInsets.all(50.0),
+      decoration: BoxDecoration(
+          color: Colors.lightBlueAccent,
+          borderRadius: BorderRadius.circular(4.5)),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Text(
+            "Florian Budnik",
+            style: TextStyle(
+                fontSize: 20.9,
+                color: Colors.white,
+                fontWeight: FontWeight.w500),
+          ),
+          Text("Buildappswithpaulo.com"),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Icon(Icons.person_pin),
+              Text("T:@buildappswithme")
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Container _getAvatar() {
+    return Container(
+      width: 100,
+      height: 100,
+      margin: EdgeInsets.fromLTRB(00, 100, 290, 0),
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(50.0)),
+          border: Border.all(color: Colors.white, width: 1.2),
+          image: DecorationImage(
+              image: NetworkImage("https://picsum.photos/300/300"),
+              fit: BoxFit.cover)),
+    );
+  }
+}
+
 class ScaffoldExample extends StatelessWidget {
   _tapButton() {
     debugPrint("Tapped buttomn");
@@ -20,6 +87,22 @@ class ScaffoldExample extends StatelessWidget {
               icon: Icon(Icons.battery_charging_full), onPressed: _tapButton)
         ],
       ),
+
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.lightGreen,
+        child: Icon(Icons.featured_play_list),
+        onPressed: () => debugPrint("Hello"),
+      ),
+
+      bottomNavigationBar: BottomNavigationBar(items: [
+        BottomNavigationBarItem(
+            icon: Icon(Icons.access_time), title: Text("First")),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.ac_unit), title: Text("Second")),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.accessibility), title: Text("Third"))
+
+      ], onTap: (int index) => debugPrint("Tapped item: $index"),),
       backgroundColor: Colors.indigo.shade600,
       body: Container(
           alignment: Alignment.center,

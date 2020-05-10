@@ -1,5 +1,87 @@
 import 'package:flutter/material.dart';
 
+class Wisdom extends StatefulWidget {
+  @override
+  _WisdomState createState() => _WisdomState();
+}
+
+class _WisdomState extends State<Wisdom> {
+  int _index = 0;
+
+  List quotes = [
+    "Der Pantoffel der Gerechtigkeit wird zuschlagen.",
+    "Ein Gentleman schweigt und genießt, aber ich hab.... ",
+    "Hahahahahahahahahah",
+    "Schenkelklopfer",
+    "Was ich dazu mal sagen wollte (fängt dann aber mit einem anderen Thema an)",
+    "Damals, bei der Bundeswehr...",
+    "Frauen können ja eh nichts durchziehen",
+    "Auf Jedi!",
+    "...",
+    ""
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              child: Center(
+                child: Container(
+                    width: 350,
+                    height: 200,
+                    margin: EdgeInsets.all(30.0),
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                      borderRadius: BorderRadius.circular(14.5),
+                    ),
+                    child: Center(
+                        child: Text(
+                      quotes[_index % quotes.length],
+                      style: TextStyle(
+                        color: Colors.grey.shade600,
+                        fontStyle: FontStyle.italic,
+                        fontSize: 16.5,
+                      ),
+                    ))),
+              ),
+            ),
+            Divider(
+              thickness: 1.3,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 18.0),
+              child: FlatButton.icon(
+                onPressed: _showQuote,
+                color: Colors.green.shade700,
+                icon: Icon(Icons.announcement),
+                label: Text(
+                  "Was würde Matze sagen?",
+                  style: TextStyle(
+                    fontSize: 18.8,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            Spacer()
+          ],
+        ),
+      ),
+    );
+  }
+
+  void _showQuote() {
+// increment our index/ Counter by 1
+    setState(() {
+      _index += 1;
+    });
+  }
+}
+
 class BizCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -87,22 +169,22 @@ class ScaffoldExample extends StatelessWidget {
               icon: Icon(Icons.battery_charging_full), onPressed: _tapButton)
         ],
       ),
-
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.lightGreen,
         child: Icon(Icons.featured_play_list),
         onPressed: () => debugPrint("Hello"),
       ),
-
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(
-            icon: Icon(Icons.access_time), title: Text("First")),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.ac_unit), title: Text("Second")),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.accessibility), title: Text("Third"))
-
-      ], onTap: (int index) => debugPrint("Tapped item: $index"),),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.access_time), title: Text("First")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.ac_unit), title: Text("Second")),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.accessibility), title: Text("Third"))
+        ],
+        onTap: (int index) => debugPrint("Tapped item: $index"),
+      ),
       backgroundColor: Colors.indigo.shade600,
       body: Container(
           alignment: Alignment.center,

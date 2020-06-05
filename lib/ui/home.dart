@@ -417,7 +417,7 @@ class _BillSplitterState extends State<BillSplitter> {
                 children: <Widget>[
                   TextField(
                     keyboardType:
-                    TextInputType.numberWithOptions(decimal: true),
+                        TextInputType.numberWithOptions(decimal: true),
                     style: TextStyle(color: _purple),
                     decoration: InputDecoration(
                       prefixText: "Rechungssumme ",
@@ -566,7 +566,8 @@ class _BillSplitterState extends State<BillSplitter> {
               endIndent: 25,
               thickness: 3,
             ),
-            Container( //Rahmenhöhe Start
+            Container(
+              //Rahmenhöhe Start
               margin: EdgeInsets.only(top: 20),
               padding: EdgeInsets.all(12.0),
               width: 150,
@@ -578,11 +579,13 @@ class _BillSplitterState extends State<BillSplitter> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text("Deine ideale Rahmenhöhe ist:", style: TextStyle(
-                    fontWeight: FontWeight.normal,
-                    fontSize: 15.0,
-                    color: _purple,
-                  ),
+                  Text(
+                    "Deine ideale Rahmenhöhe ist:",
+                    style: TextStyle(
+                      fontWeight: FontWeight.normal,
+                      fontSize: 15.0,
+                      color: _purple,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(12.0),
@@ -595,9 +598,7 @@ class _BillSplitterState extends State<BillSplitter> {
                       ),
                     ),
                   ),
-
                 ],
-
               ),
             ), //Rahmenhöhe
 
@@ -612,12 +613,10 @@ class _BillSplitterState extends State<BillSplitter> {
                   ),
                   borderRadius: BorderRadius.circular(12.0)),
               child: Column(
-
                 children: <Widget>[
-
                   TextField(
-                    keyboardType: TextInputType.numberWithOptions(
-                        decimal: true),
+                    keyboardType:
+                    TextInputType.numberWithOptions(decimal: true),
                     style: TextStyle(color: _purple),
                     decoration: InputDecoration(
                       prefixText: "Schrittlänge ",
@@ -630,13 +629,10 @@ class _BillSplitterState extends State<BillSplitter> {
                         _eggsHeight = 0.0;
                       }
                     },
-
-
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-
                       InkWell(
                         onTap: () {
                           setState(() {
@@ -655,18 +651,15 @@ class _BillSplitterState extends State<BillSplitter> {
                               "Mountain-Bike",
                               style: TextStyle(
                                   color: _purple,
-
                                   fontWeight: FontWeight.bold,
                                   fontSize: 12.0),
                             ),
                           ),
                         ),
-
                       ),
                       InkWell(
                         splashColor: Colors.yellowAccent,
                         highlightColor: Colors.blue,
-
                         onTap: () {
                           setState(() {
                             _bikeFactor = 0.61;
@@ -679,8 +672,6 @@ class _BillSplitterState extends State<BillSplitter> {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(7.0),
                             color: _purple.withOpacity(0.1),
-
-
                           ),
                           child: Center(
                             child: Text(
@@ -692,15 +683,12 @@ class _BillSplitterState extends State<BillSplitter> {
                             ),
                           ),
                         ),
-
                       ),
                       InkWell(
                         onTap: () {
                           setState(() {
                             _bikeFactor = 0.665;
-                          }
-
-                          );
+                          });
                         },
                         child: Container(
                           width: 60.0,
@@ -719,14 +707,9 @@ class _BillSplitterState extends State<BillSplitter> {
                             ),
                           ),
                         ),
-
                       )
-
-
                     ],
-
                   )
-
                 ],
               ),
             ),
@@ -736,7 +719,6 @@ class _BillSplitterState extends State<BillSplitter> {
               thickness: 3,
               indent: 25,
               endIndent: 25,
-
             ),
             Container(
               margin: EdgeInsets.only(top: 20),
@@ -750,25 +732,25 @@ class _BillSplitterState extends State<BillSplitter> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text("Dein BMI ist",
+                  Text(
+                    "Dein BMI ist",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 15.0,
                       color: _purple,
-
-
-                    ),),
-                  Padding(padding: const EdgeInsets.all(12.0),
-                    child: Text(
-                      "${calculateBMI(_weight, _height)}", style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 34.5,
-                      color: _purple,
-                    ),),
-
-
+                    ),
                   ),
-
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Text(
+                      "${calculateBMI(_weight, _height)}",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 34.5,
+                        color: _purple,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ), //BMI Start
@@ -782,16 +764,17 @@ class _BillSplitterState extends State<BillSplitter> {
                   style: BorderStyle.solid,
                 ),
                 borderRadius: BorderRadius.circular(12),
-
               ),
               child: Column(
                 children: <Widget>[
-                  Text("Gewicht:", style:
-                  TextStyle(
-                    fontSize: 17.0,
-                    fontWeight: FontWeight.bold,
-                    color: _purple,
-                  ),),
+                  Text(
+                    "Gewicht:",
+                    style: TextStyle(
+                      fontSize: 17.0,
+                      fontWeight: FontWeight.bold,
+                      color: _purple,
+                    ),
+                  ),
                   Slider(
                     min: 50.0,
                     max: 150.0,
@@ -806,15 +789,16 @@ class _BillSplitterState extends State<BillSplitter> {
                       });
                     },
                   ),
-
                   Column(
                     children: <Widget>[
-                      Text("Größe", style:
-                      TextStyle(
-                        fontSize: 17.0,
-                        fontWeight: FontWeight.bold,
-                        color: _purple,
-                      ),),
+                      Text(
+                        "Größe",
+                        style: TextStyle(
+                          fontSize: 17.0,
+                          fontWeight: FontWeight.bold,
+                          color: _purple,
+                        ),
+                      ),
                       Slider(
                         min: 160,
                         max: 200,
@@ -829,15 +813,10 @@ class _BillSplitterState extends State<BillSplitter> {
                           });
                         },
                       ),
-
                     ],
                   )
-
                 ],
-
               ),
-
-
             ),
             Divider(
               color: _purple,
@@ -845,9 +824,9 @@ class _BillSplitterState extends State<BillSplitter> {
               thickness: 3,
               indent: 25,
               endIndent: 25,
-
             ),
-            Container( //Prozentstart
+            Container(
+              //Prozentstart
               margin: EdgeInsets.only(top: 20),
               padding: EdgeInsets.all(12),
               width: 150,
@@ -859,23 +838,25 @@ class _BillSplitterState extends State<BillSplitter> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text("Prozentrechner",
+                  Text(
+                    "Prozentrechner",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 15.0,
                       color: _purple,
-
-
-                    ),),
-                  Padding(padding: const EdgeInsets.all(12.0),
-                    child: Text(" ${calculateMasterPercentage(
-                        _percent, _partAmount, _fullAmount)}.",
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Text(
+                      " ${calculateMasterPercentage(
+                          _percent, _partAmount, _fullAmount)}.",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
                         color: _purple,
-                      ),),
-
+                      ),
+                    ),
                   ),
 //                  Padding(padding: const EdgeInsets.all(12.0),
 //                    child: Text("$_percent% sind $_partAmount von ${calculateFullAmount(_percent, _partAmount)}.", style: TextStyle(
@@ -899,7 +880,6 @@ class _BillSplitterState extends State<BillSplitter> {
 //                      color: _purple,
 //                    ),),
 //                  ),
-
                 ],
               ),
             ), //Prozentrechner
@@ -916,34 +896,30 @@ class _BillSplitterState extends State<BillSplitter> {
               ),
               child: Column(
                 children: <Widget>[
-
                   Row(
                     children: <Widget>[
                       Flexible(
                         child: TextField(
-                          keyboardType: TextInputType.numberWithOptions(
-                              decimal: true),
+                          keyboardType:
+                          TextInputType.numberWithOptions(decimal: true),
                           style: TextStyle(color: _purple),
                           decoration: InputDecoration(
                             floatingLabelBehavior: FloatingLabelBehavior.always,
                             labelText: "Prozentwert",
                             suffixText: "%",
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                    Radius.circular(0.0)),
+                                borderRadius:
+                                BorderRadius.all(Radius.circular(0.0)),
                                 borderSide: BorderSide(
                                   color: Colors.blueGrey.shade100,
                                   width: 1,
-                                )
-                            ),
+                                )),
                             labelStyle: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                               color: _purple,
                             ),
-
                           ),
-
                           onChanged: (String value) {
                             try {
                               _percent = double.parse(value);
@@ -951,32 +927,28 @@ class _BillSplitterState extends State<BillSplitter> {
                               _percent = 0.0;
                             }
                           },
-
                         ),
                       ),
                       Flexible(
                         child: TextField(
-                          keyboardType: TextInputType.numberWithOptions(
-                              decimal: true),
+                          keyboardType:
+                          TextInputType.numberWithOptions(decimal: true),
                           style: TextStyle(color: _purple),
                           decoration: InputDecoration(
                             floatingLabelBehavior: FloatingLabelBehavior.always,
                             labelText: "Gesamt",
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                    Radius.circular(0.0)),
+                                borderRadius:
+                                BorderRadius.all(Radius.circular(0.0)),
                                 borderSide: BorderSide(
                                   color: Colors.blueGrey.shade100,
                                   width: 1,
-                                )
-                            ),
+                                )),
                             labelStyle: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                               color: _purple,
                             ),
-
-
                           ),
                           onChanged: (String value) {
                             try {
@@ -985,8 +957,8 @@ class _BillSplitterState extends State<BillSplitter> {
                               _fullAmount = 0.0;
                             }
                           },
-
-                        ),),
+                        ),
+                      ),
                       Flexible(
                         child: TextField(
                           keyboardType:
@@ -996,13 +968,12 @@ class _BillSplitterState extends State<BillSplitter> {
                             floatingLabelBehavior: FloatingLabelBehavior.always,
                             labelText: "Teil",
                             border: OutlineInputBorder(
-                                borderRadius: BorderRadius.all(
-                                    Radius.circular(0.0)),
+                                borderRadius:
+                                BorderRadius.all(Radius.circular(0.0)),
                                 borderSide: BorderSide(
                                   color: Colors.blueGrey.shade100,
                                   width: 1,
-                                )
-                            ),
+                                )),
                             labelStyle: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -1022,20 +993,12 @@ class _BillSplitterState extends State<BillSplitter> {
                   ),
                 ],
               ),
-
-
             )
-
-
           ],
-
         ),
       ),
-
-
     );
   }
-
 
   calculateFullAmount(double percentage, double partAmount) {
     var fullAmount = ((partAmount / percentage) * 100);
@@ -1075,7 +1038,6 @@ class _BillSplitterState extends State<BillSplitter> {
     }
   }
 
-
   calculateEggsHeigh(double eggsHeight, double bikeFactor) {
     var frameHeight = (eggsHeight * bikeFactor);
 
@@ -1087,7 +1049,6 @@ class _BillSplitterState extends State<BillSplitter> {
 
     return bmi.toStringAsFixed(1);
   }
-
 
   calculateTotalPerPerson(double billAmount, int splitBy, int tipPercentage) {
     var totalPerPerson =

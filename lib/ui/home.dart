@@ -172,7 +172,7 @@ class _QuizzAppState extends State<QuizzApp> {
     Question.name("Han Solo hat zuerst geschossen.", true),
     Question.name("Ein X-Wing ist schneller als ein A-Wing.", false),
     Question.name("Die Klone sind alle gleich", false),
-    Question.name("Es gab nur 3 Millionen Klone", true),
+    Question.name("Es gab nur 3 bis 5 Millionen Klone", true),
     Question.name("Es waren Klone auf dem Todesstern und auf Hoth", true),
     Question.name("Die Erste Ordnung hat noch Klone", false),
     Question.name("Boba Fett war ein Mandalorianer", false),
@@ -181,7 +181,7 @@ class _QuizzAppState extends State<QuizzApp> {
         "\n Klon-Marschall"
         "\n Freund Obi-Wans",
         true),
-    Question.name("Wie ist Fives( aus der 501.st) gestorben?", true),
+    Question.name("Palpatines Vorname ist Sheev", true),
     Question.name("Mace Windus Lichtschwert is Lila", true),
     Question.name("Dart Maul stribt auf Naboo", false),
     Question.name(
@@ -194,9 +194,9 @@ class _QuizzAppState extends State<QuizzApp> {
       appBar: AppBar(
         title: Text("Was weiß Obi-Wan?"),
         centerTitle: true,
-        backgroundColor: Colors.blueGrey,
+//        backgroundColor: Colors.blueGrey,
       ),
-      backgroundColor: Colors.blueGrey,
+//      backgroundColor: Colors.blueGrey,
       //we use  [Builder] hereto use a [context] that is a descendent of [Scaffold]
       //or else [Scaffold.of] will return non
       body: Builder(
@@ -228,10 +228,7 @@ class _QuizzAppState extends State<QuizzApp> {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       questionBank[_currentQuestionIndex].questionText,
-                      style: TextStyle(
-                        fontSize: 16.0,
-                        color: Colors.white,
-                      ),
+//                      style: TextStyle(fontSize: 16.0,color: Colors.white,),
                     ),
                   )),
                 ),
